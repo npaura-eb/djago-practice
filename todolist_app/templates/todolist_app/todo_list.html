@@ -1,0 +1,9 @@
+<h1>TODOs</h1>
+<ul>
+{% for todo in object_list %}
+    <li>{{ todo.created|date }} - {{ todo.name }} {{ todo.description }} <a href="{% url 'detail' todo.id %}">Detail</a></li>
+{% empty %}
+    <li>No TODO yet.</li>
+{% endfor %}
+</ul>
+<button><a href="{% url 'create' %}">Create</a></button>
